@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The Art of the Possible — missing middle capacity, GTA</title>
+<meta name="description" content="Preliminary as-of-right housing capacity across eleven GTA municipalities.">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+
+<div id="map"></div>
+
+<div class="panel" id="panel" hidden>
+  <button class="close" id="panel-close" aria-label="Close">&times;</button>
+  <h2 id="panel-title">Parcel</h2>
+  <p class="sub" id="panel-sub"></p>
+  <dl id="panel-body"></dl>
+</div>
+
+<div class="controls">
+  <h1>The Art of the Possible</h1>
+  <p class="lede">Preliminary as-of-right capacity, eleven GTA municipalities.</p>
+
+  <div class="block">
+    <label for="ms-address">Find an address</label>
+    <div id="search"></div>
+  </div>
+
+  <div class="block">
+    <label for="colour-by">Colour parcels by</label>
+    <select id="colour-by">
+      <option value="n_units" selected>Units permitted</option>
+      <option value="municipality">Municipality</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <div id="legend" class="legend"></div>
+  </div>
+
+  <div class="block">
+    <table class="tally" id="tally"><tbody></tbody></table>
+  </div>
+
+  <p class="note" id="zoom-note">Zoom in to see parcels.</p>
+</div>
+
+<div class="credit">
+  Preliminary. One representative low-rise zone standard per municipality, applied to every
+  parcel in the residential range — not a parcel-level zoning model, and no conversion of
+  existing buildings. Regulatory baseline: HM Planning D1, 14 October 2026. Parcel geometry
+  from each municipality's open data; Toronto's is
+  <a href="https://open.toronto.ca/open-data-license/">Open Government Licence – Toronto</a>.
+  Study working material, not a capacity estimate.
+</div>
+
+<script src="/map-search.js"></script>
+<script src="https://unpkg.com/pmtiles@3.0.6/dist/pmtiles.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="config.js" onerror="window.CARTO_API_KEY=''"></script>
+<script src="map.js"></script>
