@@ -115,14 +115,21 @@
   }
 
   function basemap() {
+    // CARTO's keyless endpoint now stamps "API KEY REQUIRED" across every tile, so without
+    // a key fall back to OpenStreetMap's own raster tiles rather than ship a watermark.
+    // Set the CARTO_API_KEY repository secret and the workflow writes config.js for the
+    // lighter CARTO basemap, which suits a data map better.
     const key = (window.CARTO_API_KEY || "").trim();
-    const url = key
-      ? "https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png?key=" + encodeURIComponent(key)
-      : "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+    const carto = "https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png?key="
+      + encodeURIComponent(key);
+    const osm = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+    const attribution = key
+      ? '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, © <a href="https://carto.com/attributions">CARTO</a>'
+      : '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     return {
       version: 8,
-      sources: { base: { type: "raster", tiles: [url], tileSize: 256,
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, © <a href="https://carto.com/attributions">CARTO</a>' } },
+      sources: { base: { type: "raster", tiles: [key ? carto : osm], tileSize: 256,
+                         maxzoom: 19, attribution } },
       layers: [{ id: "base", type: "raster", source: "base" }],
     };
   }
