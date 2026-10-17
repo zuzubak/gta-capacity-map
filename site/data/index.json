@@ -2,13 +2,25 @@
  {
   "name": "Toronto",
   "slug": "toronto",
-  "parcels": 366241,
-  "units": 1399423,
+  "parcels": 437304,
+  "units": 2198372,
   "bounds": [
-   -79.6373,
+   -79.6261,
    43.5862,
-   -79.1228,
+   -79.1216,
    43.8409
+  ]
+ },
+ {
+  "name": "Mississauga",
+  "slug": "mississauga",
+  "parcels": 138818,
+  "units": 565537,
+  "bounds": [
+   -79.7971,
+   43.4997,
+   -79.5473,
+   43.7368
   ]
  },
  {
@@ -24,15 +36,15 @@
   ]
  },
  {
-  "name": "Mississauga",
-  "slug": "mississauga",
-  "parcels": 99667,
-  "units": 417534,
+  "name": "Vaughan",
+  "slug": "vaughan",
+  "parcels": 84595,
+  "units": 265220,
   "bounds": [
-   -79.7971,
-   43.4999,
-   -79.55,
-   43.7365
+   -79.6842,
+   43.7585,
+   -79.4223,
+   43.8987
   ]
  },
  {
@@ -48,18 +60,6 @@
   ]
  },
  {
-  "name": "Vaughan",
-  "slug": "vaughan",
-  "parcels": 67123,
-  "units": 211859,
-  "bounds": [
-   -79.6636,
-   43.7655,
-   -79.4238,
-   43.8967
-  ]
- },
- {
   "name": "Richmond Hill",
   "slug": "richmond-hill",
   "parcels": 42617,
@@ -72,39 +72,39 @@
   ]
  },
  {
-  "name": "Barrie",
-  "slug": "barrie",
-  "parcels": 34541,
-  "units": 152385,
+  "name": "Oshawa",
+  "slug": "oshawa",
+  "parcels": 48785,
+  "units": 169441,
   "bounds": [
-   -79.7449,
-   44.3009,
-   -79.5981,
-   44.424
+   -78.9334,
+   43.8542,
+   -78.8022,
+   44.0364
   ]
  },
  {
-  "name": "Oshawa",
-  "slug": "oshawa",
-  "parcels": 37416,
-  "units": 139025,
+  "name": "Barrie",
+  "slug": "barrie",
+  "parcels": 34396,
+  "units": 161906,
   "bounds": [
-   -78.9294,
-   43.8542,
-   -78.8024,
-   44.0286
+   -79.7441,
+   44.2987,
+   -79.5938,
+   44.4243
   ]
  },
  {
   "name": "Ajax",
   "slug": "ajax",
-  "parcels": 26293,
-  "units": 118813,
+  "parcels": 32457,
+  "units": 139302,
   "bounds": [
    -79.0782,
    43.8183,
-   -78.9715,
-   43.9035
+   -78.9708,
+   43.9177
   ]
  },
  {

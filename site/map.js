@@ -66,6 +66,9 @@
   const FMT = { detached_unit: YESNO, greenbelt: YESNO, orm: YESNO };
   const PANEL_FIELDS = [
     ["municipality", "Municipality"],
+    ["zone", "Zone"],
+    ["method", "Method"],
+    ["selected_by", "Residential by"],
     ["frontage_m", "Frontage (m)"],
     ["depth_m", "Depth (m)"],
     ["area_m2", "Lot area (m²)"],

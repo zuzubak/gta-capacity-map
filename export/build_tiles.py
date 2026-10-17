@@ -23,7 +23,8 @@ import pandas as pd
 TRREB = os.path.expanduser("~/projects/TRREB")
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-FIELDS = ["municipality", "frontage_m", "depth_m", "area_m2", "buildable_width_m",
+FIELDS = ["municipality", "zone", "method", "selected_by",
+          "frontage_m", "depth_m", "area_m2", "buildable_width_m",
           "footprint_sqft", "storeys", "n_units_main", "detached_unit",
           "detached_unit_sqft", "n_units", "max_units_zoned", "greenbelt", "orm"]
 TENTHS = ["frontage_m", "depth_m", "buildable_width_m"]

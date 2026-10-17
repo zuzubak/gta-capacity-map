@@ -1,4 +1,4 @@
-name: Deploy art of the possible
+name: Deploy GTA capacity map
 
 # No schedule, unlike to-multiplex-map. The tiles are built from a static snapshot of the
 # TRREB study data and committed to the repo, so there is nothing to refresh on a timer --
