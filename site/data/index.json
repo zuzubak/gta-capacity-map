@@ -26,12 +26,12 @@
  {
   "name": "Brampton",
   "slug": "brampton",
-  "parcels": 115376,
-  "units": 427234,
+  "parcels": 122010,
+  "units": 448237,
   "bounds": [
    -79.8654,
    43.6135,
-   -79.6532,
+   -79.6534,
    43.8168
   ]
  },
@@ -60,6 +60,18 @@
   ]
  },
  {
+  "name": "Barrie",
+  "slug": "barrie",
+  "parcels": 45399,
+  "units": 195246,
+  "bounds": [
+   -79.7453,
+   44.2987,
+   -79.5876,
+   44.4243
+  ]
+ },
+ {
   "name": "Richmond Hill",
   "slug": "richmond-hill",
   "parcels": 42617,
@@ -84,18 +96,6 @@
   ]
  },
  {
-  "name": "Barrie",
-  "slug": "barrie",
-  "parcels": 34396,
-  "units": 161906,
-  "bounds": [
-   -79.7441,
-   44.2987,
-   -79.5938,
-   44.4243
-  ]
- },
- {
   "name": "Ajax",
   "slug": "ajax",
   "parcels": 32457,
@@ -110,8 +110,8 @@
  {
   "name": "Whitby",
   "slug": "whitby",
-  "parcels": 32598,
-  "units": 114466,
+  "parcels": 35873,
+  "units": 124447,
   "bounds": [
    -78.9972,
    43.8447,
@@ -122,10 +122,10 @@
  {
   "name": "Pickering",
   "slug": "pickering",
-  "parcels": 18127,
-  "units": 62405,
+  "parcels": 19482,
+  "units": 67161,
   "bounds": [
-   -79.1856,
+   -79.1876,
    43.7952,
    -79.0241,
    43.9885

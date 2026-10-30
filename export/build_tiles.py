@@ -23,14 +23,20 @@ import pandas as pd
 TRREB = os.path.expanduser("~/projects/TRREB")
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-FIELDS = ["municipality", "zone", "method", "selected_by",
-          "frontage_m", "depth_m", "area_m2", "buildable_width_m",
+# greenbelt and orm are out of the tiles: they drive the model (Whitby and Pickering are
+# cut to one unit on the Moraine, Ajax to none in the Greenbelt) but they are not worth a
+# panel row. They stay in region_model.csv.
+FIELDS = ["municipality", "address", "zone", "method", "selected_by",
+          "frontage_m", "depth_m", "area_m2",
+          "front_setback_m", "side_setback_m", "rear_setback_m",
+          "buildable_width_m", "building_depth_m",
           "footprint_sqft", "storeys", "n_units_main", "detached_unit",
-          "detached_unit_sqft", "n_units", "max_units_zoned", "greenbelt", "orm"]
-TENTHS = ["frontage_m", "depth_m", "buildable_width_m"]
+          "detached_unit_sqft", "n_units", "max_units_zoned"]
+TENTHS = ["frontage_m", "depth_m", "buildable_width_m", "building_depth_m",
+          "front_setback_m", "side_setback_m", "rear_setback_m"]
 WHOLE = ["area_m2", "footprint_sqft", "detached_unit_sqft",
          "storeys", "n_units_main", "n_units", "max_units_zoned"]
-BOOLS = ["detached_unit", "greenbelt", "orm"]
+BOOLS = ["detached_unit"]
 
 MINZOOM, MAXZOOM = 10, 15     # a regional overview, not a parcel-detail tool
 

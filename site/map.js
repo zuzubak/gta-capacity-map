@@ -12,7 +12,8 @@
   const GTA = [-79.42, 43.72];
   const MINZOOM = 10;
 
-  const TENTHS = new Set(["frontage_m", "depth_m", "buildable_width_m"]);
+  const TENTHS = new Set(["frontage_m", "depth_m", "buildable_width_m", "building_depth_m",
+                          "front_setback_m", "side_setback_m", "rear_setback_m"]);
   const scaled = (f, v) => (TENTHS.has(f) ? v * 10 : v);
   const unscale = (f, v) => (TENTHS.has(f) ? v / 10 : v);
 
@@ -63,16 +64,18 @@
   }
 
   const YESNO = (v) => (Number(v) ? "Yes" : "No");
-  const FMT = { detached_unit: YESNO, greenbelt: YESNO, orm: YESNO };
+  const FMT = { detached_unit: YESNO };
   const PANEL_FIELDS = [
     ["municipality", "Municipality"],
     ["zone", "Zone"],
-    ["method", "Method"],
-    ["selected_by", "Residential by"],
     ["frontage_m", "Frontage (m)"],
     ["depth_m", "Depth (m)"],
     ["area_m2", "Lot area (m²)"],
+    ["front_setback_m", "Front setback (m)"],
+    ["side_setback_m", "Side setback (m)"],
+    ["rear_setback_m", "Rear setback (m)"],
     ["buildable_width_m", "Buildable width (m)"],
+    ["building_depth_m", "Building depth (m)"],
     ["footprint_sqft", "Floor plate (sq ft)"],
     ["storeys", "Storeys"],
     ["n_units_main", "Units in main building"],
@@ -80,14 +83,16 @@
     ["detached_unit_sqft", "Detached unit (sq ft)"],
     ["n_units", "Units total"],
     ["max_units_zoned", "Zoned maximum"],
-    ["greenbelt", "In the Greenbelt"],
-    ["orm", "On the Oak Ridges Moraine"],
+    ["method", "Method"],
+    ["selected_by", "Residential by"],
   ];
 
   function showPanel(p) {
-    document.getElementById("panel-title").textContent = p.municipality || "Parcel";
+    const addr = (p.address || "").trim();
+    document.getElementById("panel-title").textContent = addr || p.municipality || "Parcel";
     document.getElementById("panel-sub").textContent =
-      (Number(p.n_units) || 0) + " units permitted as of right";
+      (Number(p.n_units) || 0) + " units permitted as of right"
+      + (addr ? " · " + p.municipality : "");
     const dl = document.getElementById("panel-body");
     dl.innerHTML = "";
     PANEL_FIELDS.forEach(([k, label]) => {
